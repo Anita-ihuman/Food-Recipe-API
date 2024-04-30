@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: foodrecipes-deployment
+  labels:
+    app: foodrecipes
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: foodrecipes
+  template:
+    metadata:
+      labels:
+        app: foodrecipes
+    spec:
+      containers:
+      - name: foodrecipes
+        image: anitaihuman/foodrecipes:latest
+        ports:
+        - containerPort: 3000

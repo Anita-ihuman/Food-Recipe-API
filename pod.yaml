@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: foodrecipes-pod
+spec:
+  containers:
+  - name: foodrecipes
+    image:  anitaihuman/foodrecipes:latest
+    ports:
+    - containerPort: 80
